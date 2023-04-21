@@ -5,11 +5,12 @@ import lombok.*;
 
 import java.util.UUID;
 
+@Entity
+@Table(name = "produits")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "produits")
 public class Product {
 
     @Id

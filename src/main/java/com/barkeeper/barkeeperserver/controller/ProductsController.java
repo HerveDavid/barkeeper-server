@@ -25,5 +25,4 @@ public class ProductsController {
         return productsRepository.findById(productId).map(product -> new ResponseEntity<>(product, HttpStatus.OK));
     }
 
-
 }
