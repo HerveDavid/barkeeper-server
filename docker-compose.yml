@@ -1,0 +1,33 @@
+version: "3"
+
+networks:
+  barkeeper:
+    external: false
+
+services:
+
+  mariadb:
+    image: mariadb
+    restart: always
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    depends_on:
+      - mariadb
+    environment:
+      PMA_HOSTS: mariadb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8000:80"
+
+volumes:
+  mariadb-data:
+    
+
