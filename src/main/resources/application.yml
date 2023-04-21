@@ -12,5 +12,5 @@ spring:
     database: MYSQL
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddlAuto: create-drop
 
